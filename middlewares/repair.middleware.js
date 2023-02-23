@@ -10,6 +10,13 @@ exports.validateStatus = async (req, res, next) => {
         status: 'pending',
         id,
       },
+
+      include: [
+        {
+          model: User
+        }
+      ]
+      
     });
 
     if (!repair) {
